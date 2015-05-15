@@ -9,6 +9,10 @@ use warnings;
 
 our %SPEC;
 
+require Exporter;
+our @ISA       = qw(Exporter);
+our @EXPORT_OK = qw(call_lcpan_script);
+
 $SPEC{call_lcpan_script} = {
     v => 1.1,
     summary => '"Call" lcpan script',
@@ -21,9 +25,9 @@ $SPEC{call_lcpan_script} = {
     },
 };
 sub call_lcpan_script {
-    require IPC::System::Options;
     require Perinci::CmdLine::Call;
 
+    my %args = @_;
 
     state $checked;
     unless ($checked) {
