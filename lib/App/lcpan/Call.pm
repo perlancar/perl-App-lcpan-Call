@@ -17,7 +17,7 @@ $SPEC{call_lcpan_script} = {
     v => 1.1,
     summary => '"Call" lcpan script',
     args => {
-        # XXX max_index_age (default 5 days)
+        # XXX max_index_age (default 14 days)
         argv => {
             schema => ['array*', of=>'str*'],
             default => [],
@@ -41,8 +41,8 @@ sub call_lcpan_script {
         die "Can't 'lcpan stats': $res->[0] - $res->[1]\n"
             unless $res->[0] == 200;
         my $stats = $res->[2];
-        if ((time - $stats->{raw_last_index_time}) > 5*86400) {
-            die "lcpan index is over 5 days old, please refresh it first ".
+        if ((time - $stats->{raw_last_index_time}) > 14*86400) {
+            die "lcpan index is over 14 days old, please refresh it first ".
                 "with 'lcpan update'\n";
         }
     }
