@@ -1,5 +1,10 @@
 Revision history for App-lcpan-Call
 
+0.02    2015-05-19 (PERLANCAR)
+
+	- [ux] Relax index freshness requirement from 5 days to 14 days.
+
+
 0.01    2015-05-15 (PERLANCAR)
 
         - First version.
