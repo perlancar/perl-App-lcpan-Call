@@ -23,6 +23,7 @@ $SPEC{call_lcpan_script} = {
             default => [],
         },
     },
+    result_naked => 1,
 };
 sub call_lcpan_script {
     require Perinci::CmdLine::Call;
