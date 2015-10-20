@@ -1,5 +1,10 @@
 Revision history for App-lcpan-Call
 
+0.04    2015-10-20 (PERLANCAR)
+
+	- Fix/tweak Rinci metadata: add result_naked=>1.
+
+
 0.03    2015-09-03 (PERLANCAR)
 
 	- No functional changes.
