@@ -1,5 +1,14 @@
 Revision history for App-lcpan-Call
 
+0.05    2015-12-17 (PERLANCAR)
+
+	- No functional changes.
+
+	- [build] Re-build with updated Perinci::To::POD (0.70) which fixes
+          rendering of modules' POD with regard to result_naked=1/args_as !=
+          'hash'.
+
+
 0.04    2015-10-20 (PERLANCAR)
 
 	- Fix/tweak Rinci metadata: add result_naked=>1.
