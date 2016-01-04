@@ -17,7 +17,17 @@ $SPEC{call_lcpan_script} = {
     v => 1.1,
     summary => '"Call" lcpan script',
     args => {
-        # XXX max_index_age (default 14 days)
+        max_age => {
+            summary => 'Maximum index age (in seconds)',
+            schema => 'duration',
+            'x.perl.coerce_to' => 'int(secs)',
+            description => <<'_',
+
+If unspecified, will look at `LCPAN_MAX_AGE` environment variable. If that is
+also undefined, will default to 14 days.
+
+_
+        },
         argv => {
             schema => ['array*', of=>'str*'],
             default => [],
@@ -42,9 +52,11 @@ sub call_lcpan_script {
         die "Can't 'lcpan stats': $res->[0] - $res->[1]\n"
             unless $res->[0] == 200;
         my $stats = $res->[2];
-        if ((time - $stats->{raw_last_index_time}) > 14*86400) {
-            die "lcpan index is over 14 days old, please refresh it first ".
-                "with 'lcpan update'\n";
+        my $max_age = $args{max_age} // $ENV{LCPAN_MAX_AGE} // 14*86400;
+        my $max_age_in_days = sprintf("%f", $max_age / 86400);
+        if ((time - $stats->{raw_last_index_time}) > $max_age) {
+            die "lcpan index is over $max_age_in_days day(s) old, ".
+                "please refresh it first with 'lcpan update'\n";
         }
     }
 
