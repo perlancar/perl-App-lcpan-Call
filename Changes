@@ -1,5 +1,11 @@
 Revision history for App-lcpan-Call
 
+0.06    2016-01-05 (PERLANCAR)
+
+	- Allow configuring maximum index age via argument (max_age) or env
+	  LCPAN_MAX_AGE before defaulting to 14 days.
+
+
 0.05    2015-12-17 (PERLANCAR)
 
 	- No functional changes.
