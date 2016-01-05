@@ -53,7 +53,7 @@ sub call_lcpan_script {
             unless $res->[0] == 200;
         my $stats = $res->[2];
         my $max_age = $args{max_age} // $ENV{LCPAN_MAX_AGE} // 14*86400;
-        my $max_age_in_days = sprintf("%f", $max_age / 86400);
+        my $max_age_in_days = sprintf("%g", $max_age / 86400);
         if ((time - $stats->{raw_last_index_time}) > $max_age) {
             die "lcpan index is over $max_age_in_days day(s) old, ".
                 "please refresh it first with 'lcpan update'\n";
