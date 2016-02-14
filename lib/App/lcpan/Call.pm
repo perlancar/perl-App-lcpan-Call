@@ -33,7 +33,6 @@ _
             default => [],
         },
     },
-    result_naked => 1,
 };
 sub call_lcpan_script {
     require Perinci::CmdLine::Call;
@@ -62,13 +61,10 @@ sub call_lcpan_script {
         }
     }
 
-    my $res = Perinci::CmdLine::Call::call_cli_script(
+    Perinci::CmdLine::Call::call_cli_script(
         script => 'lcpan',
         argv   => $args{'argv'},
     );
-    die "Can't 'lcpan ".join(" ", @{ $args{argv} || [] })."': $res->[0] - $res->[1]\n"
-        unless $res->[0] == 200;
-    $res->[2];
 }
 
 1;
