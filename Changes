@@ -28,7 +28,9 @@ Revision history for App-lcpan-Call
 
 0.04    2015-10-20 (PERLANCAR)
 
-	- Fix/tweak Rinci metadata: add result_naked=>1.
+	- Fix/tweak Rinci metadata: add result_naked=>1. UPDATE 2016-02-14: this
+          has been reversed in 0.07 because it's not very flexible. Sometimes we
+          want to get the error code/status.
 
 
 0.03    2015-09-03 (PERLANCAR)
@@ -42,7 +44,8 @@ Revision history for App-lcpan-Call
 
 0.02    2015-05-19 (PERLANCAR)
 
-	- [ux] Relax index freshness requirement from 5 days to 14 days.
+	- [ux] Relax index freshness requirement from 5 days to 14 days. UPDATE
+          2016-01-05: this is now configurable via env variable LCPAN_MAX_AGE.
 
 
 0.01    2015-05-15 (PERLANCAR)
