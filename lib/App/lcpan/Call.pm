@@ -46,7 +46,7 @@ sub call_lcpan_script {
             or die "lcpan is not available, please install it first\n";
         my $res = Perinci::CmdLine::Call::call_cli_script(
             script => 'lcpan',
-            argv   => ['stats'],
+            argv   => ['stats-last-index-time'],
         );
         die "Can't 'lcpan stats': $res->[0] - $res->[1]\n"
             unless $res->[0] == 200;
