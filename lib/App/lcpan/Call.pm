@@ -69,3 +69,9 @@ sub call_lcpan_script {
 
 1;
 # ABSTRACT:
+
+=head1 ENVIRONMENT
+
+=head2 LCPAN_MAX_AGE => int
+
+Set the default of C<max_age>.
