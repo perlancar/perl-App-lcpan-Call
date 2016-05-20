@@ -20,7 +20,6 @@ $SPEC{call_lcpan_script} = {
         max_age => {
             summary => 'Maximum index age (in seconds)',
             schema => 'duration',
-            'x.perl.coerce_to' => 'int(secs)',
             description => <<'_',
 
 If unspecified, will look at `LCPAN_MAX_AGE` environment variable. If that is
