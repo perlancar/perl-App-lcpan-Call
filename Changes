@@ -1,5 +1,13 @@
 Revision history for App-lcpan-Call
 
+0.09    2016-10-01 (PERLANCAR)
+
+	- Update to Data::Sah 0.76+ (duration by default already coerced to
+	  float(secs)).
+
+	- [doc] Add POD section ENVIRONMENT.
+
+
 0.08    2016-02-16 (PERLANCAR)
 
 	- Use lcpan stats-last-index-time subcommand (new in lcpan 0.74)
