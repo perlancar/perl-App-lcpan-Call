@@ -85,7 +85,7 @@ sub check_lcpan {
                     "($age_in_days), please refresh it first with ".
                     "'lcpan update'"];
     }
-    [200,"OK"];
+    $res;
 }
 
 1;
