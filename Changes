@@ -1,5 +1,3 @@
-Revision history for App-lcpan-Call
-
 0.11    2016-10-09 (PERLANCAR)
 
 	- check_lcpan(): Return result from 'lcpan stats-last-index-time' to be
