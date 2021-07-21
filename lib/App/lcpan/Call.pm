@@ -1,6 +1,8 @@
 package App::lcpan::Call;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -57,6 +59,16 @@ sub call_lcpan_script {
 $SPEC{check_lcpan} = {
     v => 1.1,
     summary => "Check that local CPAN mirror exists and is fairly recent",
+    description> <<'_',
+
+Will return status 200 if `lcpan` script is installed (available from PATH),
+local CPAN mirror exists, and is fairly recent and queryable. This routine will
+actually attempt to run "lcpan stats-last-index-time" and return the result if
+the result is 200 *and* the index is updated quite recently. By default "quite
+recently" is defined as not older than 2 weeks or whatever LCPAN_MAX_AGE says
+(in seconds).
+
+_
     args => {
         %common_args,
     },
