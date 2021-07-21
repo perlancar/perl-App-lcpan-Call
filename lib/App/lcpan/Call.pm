@@ -59,7 +59,7 @@ sub call_lcpan_script {
 $SPEC{check_lcpan} = {
     v => 1.1,
     summary => "Check that local CPAN mirror exists and is fairly recent",
-    description> <<'_',
+    description => <<'_',
 
 Will return status 200 if `lcpan` script is installed (available from PATH),
 local CPAN mirror exists, and is fairly recent and queryable. This routine will
